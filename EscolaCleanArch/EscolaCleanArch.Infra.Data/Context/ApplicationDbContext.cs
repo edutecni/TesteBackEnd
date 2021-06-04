@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EscolaCleanArch.MVC.Data
+namespace EscolaCleanArch.Infra.Data.Context
 {
     public class ApplicationDbContext : IdentityDbContext
     {

@@ -1,4 +1,4 @@
-﻿using EscolaCleanArch.MVC.Models;
+﻿using EscolaCleanArch.Infra.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;

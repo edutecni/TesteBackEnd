@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace EscolaCleanArch.MVC.Data.Migrations
+namespace EscolaCleanArch.Infra.Data.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class Inicial2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

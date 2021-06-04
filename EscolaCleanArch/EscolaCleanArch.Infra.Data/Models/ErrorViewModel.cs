@@ -1,6 +1,6 @@
 using System;
 
-namespace EscolaCleanArch.MVC.Models
+namespace EscolaCleanArch.Infra.Data.Models
 {
     public class ErrorViewModel
     {
