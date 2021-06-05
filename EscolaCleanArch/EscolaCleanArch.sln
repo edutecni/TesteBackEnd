@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscolaCleanArch.Domain", "EscolaCleanArch.Domain\EscolaCleanArch.Domain.csproj", "{AB3384D9-63FA-4BDD-921A-423837BFA7FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscolaCleanArch.Domain", "EscolaCleanArch.Domain\EscolaCleanArch.Domain.csproj", "{AB3384D9-63FA-4BDD-921A-423837BFA7FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscolaCleanArch.Application", "EscolaCleanArch.Application\EscolaCleanArch.Application.csproj", "{B951570E-B854-4A2E-9286-7F24B07E1F0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscolaCleanArch.Application", "EscolaCleanArch.Application\EscolaCleanArch.Application.csproj", "{B951570E-B854-4A2E-9286-7F24B07E1F0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscolaCleanArch.Infra.Data", "EscolaCleanArch.Infra.Data\EscolaCleanArch.Infra.Data.csproj", "{2F13A599-9CFA-410B-A75D-06F1A7D341D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscolaCleanArch.Infra.Data", "EscolaCleanArch.Infra.Data\EscolaCleanArch.Infra.Data.csproj", "{2F13A599-9CFA-410B-A75D-06F1A7D341D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscolaCleanArch.Infra.IoC", "EscolaCleanArch.Infra.IoC\EscolaCleanArch.Infra.IoC.csproj", "{57E0217C-818C-48CE-889C-212B9ABB0881}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscolaCleanArch.Infra.IoC", "EscolaCleanArch.Infra.IoC\EscolaCleanArch.Infra.IoC.csproj", "{57E0217C-818C-48CE-889C-212B9ABB0881}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscolaCleanArch.MVC", "EscolaCleanArch.MVC\EscolaCleanArch.MVC.csproj", "{DC27301E-8A77-4465-AF46-D46B4D61E746}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscolaCleanArck.WebApi", "EscolaCleanArck.WebApi\EscolaCleanArck.WebApi.csproj", "{012CAAC8-5F33-4391-9141-BD3DB1E7AF9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{57E0217C-818C-48CE-889C-212B9ABB0881}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57E0217C-818C-48CE-889C-212B9ABB0881}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57E0217C-818C-48CE-889C-212B9ABB0881}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC27301E-8A77-4465-AF46-D46B4D61E746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC27301E-8A77-4465-AF46-D46B4D61E746}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC27301E-8A77-4465-AF46-D46B4D61E746}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC27301E-8A77-4465-AF46-D46B4D61E746}.Release|Any CPU.Build.0 = Release|Any CPU
+		{012CAAC8-5F33-4391-9141-BD3DB1E7AF9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{012CAAC8-5F33-4391-9141-BD3DB1E7AF9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{012CAAC8-5F33-4391-9141-BD3DB1E7AF9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{012CAAC8-5F33-4391-9141-BD3DB1E7AF9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
