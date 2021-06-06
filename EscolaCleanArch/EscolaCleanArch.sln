@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscolaCleanArch.Infra.Data"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscolaCleanArch.Infra.IoC", "EscolaCleanArch.Infra.IoC\EscolaCleanArch.Infra.IoC.csproj", "{57E0217C-818C-48CE-889C-212B9ABB0881}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscolaCleanArck.WebApi", "EscolaCleanArck.WebApi\EscolaCleanArck.WebApi.csproj", "{012CAAC8-5F33-4391-9141-BD3DB1E7AF9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscolaCleanArck.WebApi", "EscolaCleanArck.WebApi\EscolaCleanArck.WebApi.csproj", "{012CAAC8-5F33-4391-9141-BD3DB1E7AF9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
