@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace EscolaCleanArck.WebApi
 {
-    public class Startup
+    public class Startup 
     {
         public Startup(IConfiguration configuration)
         {
@@ -29,6 +29,8 @@ namespace EscolaCleanArck.WebApi
         {
             // Acessando as configurção do Identity e do Contexto
             services.AddInfrastructure(Configuration);
+            //DependencyInjection.AddInfrastructure(Configuration);
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

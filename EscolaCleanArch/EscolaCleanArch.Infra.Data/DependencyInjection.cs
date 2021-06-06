@@ -18,6 +18,7 @@ namespace EscolaCleanArch.Infra.Data
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
