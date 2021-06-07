@@ -19,11 +19,60 @@ namespace EscolaCleanArck.WebApi.Controllers
             _diciplinaService = diciplinaService;
         }
 
+        //[HttpGet]
+        //public async Task<DiciplinaViewModel> GetById(int? id)
+        //{
+        //    var result = await _diciplinaService.GetById(id);
+        //    return result;
+        //}
+
         [HttpGet]
         public async Task<IEnumerable<DiciplinaViewModel>> GetDiciplinas()
         {
             var result = await _diciplinaService.GetDiciplinas();
             return result;
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public void Add(DiciplinaViewModel diciplina)
+        {
+            if (ModelState.IsValid)
+            {
+                _diciplinaService.Add(diciplina);
+            }            
+        }
+
+        [HttpGet("{id}")]
+        public async Task<DiciplinaViewModel> GetById(int? id)
+        {
+            var diciplina = await _diciplinaService.GetById(id);
+
+            if (diciplina == null)
+            {
+                throw new Exception("Diciplina não encontrada"); 
+            }
+
+            return diciplina;
+        }
+
+        [HttpPost("Edit/{id}")]
+        [ValidateAntiForgeryToken]
+        public void Edit(int id, DiciplinaViewModel diciplina)
+        {
+            if (id !=  diciplina.DiciplinaId)
+            {
+                throw new Exception("Id inválido");
+            }           
+            
+            try
+            {
+                _diciplinaService.Update(diciplina);                
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
