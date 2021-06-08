@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EscolaCleanArck.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class DiciplinaController : ControllerBase
     {
@@ -19,22 +19,14 @@ namespace EscolaCleanArck.WebApi.Controllers
             _diciplinaService = diciplinaService;
         }
 
-        //[HttpGet]
-        //public async Task<DiciplinaViewModel> GetById(int? id)
-        //{
-        //    var result = await _diciplinaService.GetById(id);
-        //    return result;
-        //}
-
-        [HttpGet]
+        [HttpGet("GetDiciplinas")]
         public async Task<IEnumerable<DiciplinaViewModel>> GetDiciplinas()
         {
             var result = await _diciplinaService.GetDiciplinas();
             return result;
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost("Add")]        
         public void Add(DiciplinaViewModel diciplina)
         {
             if (ModelState.IsValid)
@@ -43,35 +35,43 @@ namespace EscolaCleanArck.WebApi.Controllers
             }            
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetById/{id}")]
         public async Task<DiciplinaViewModel> GetById(int? id)
         {
-            var diciplina = await _diciplinaService.GetById(id);
-
-            if (diciplina == null)
-            {
-                throw new Exception("Diciplina não encontrada"); 
-            }
+            var diciplina = await _diciplinaService.GetById(id);            
 
             return diciplina;
         }
 
-        [HttpPost("Edit/{id}")]
-        [ValidateAntiForgeryToken]
+        [HttpPost("Edit/{id}")]        
         public void Edit(int id, DiciplinaViewModel diciplina)
         {
-            if (id !=  diciplina.DiciplinaId)
+            if (id > 0)
             {
-                throw new Exception("Id inválido");
-            }           
-            
-            try
+                try
+                {
+                    _diciplinaService.Update(diciplina);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }  
+        }
+
+        [HttpPost("Delete/{id}")]
+        public void Delete(int id, DiciplinaViewModel diciplina)
+        {
+            if (id > 0)
             {
-                _diciplinaService.Update(diciplina);                
-            }
-            catch (Exception)
-            {
-                throw;
+                try
+                {
+                    _diciplinaService.Remove(diciplina);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
         }
     }

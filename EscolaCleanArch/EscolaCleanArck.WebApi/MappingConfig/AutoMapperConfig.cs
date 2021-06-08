@@ -12,11 +12,10 @@ namespace EscolaCleanArck.WebApi.MappingConfig
         public static void AddAutoMapperConfiguration(this IServiceCollection services)
         {
             if (services == null) throw new ArgumentException(nameof(services));
-            {
-                
-                services.AddAutoMapper(typeof(DomainToViewModelMappinggProfile),
-                typeof(ViewModelToDomainMappingProfile));
-            }
+
+            services.AddAutoMapper(typeof(DomainToViewModelMappinggProfile),
+            typeof(ViewModelToDomainMappingProfile));
+
         }
     }
 }
