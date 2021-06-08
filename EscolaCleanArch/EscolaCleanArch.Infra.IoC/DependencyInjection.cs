@@ -19,6 +19,7 @@ namespace EscolaCleanArch.Infra.IoC
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
+            // Cria as injeções de dependências para que não seja necessário instânciar as classes
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection")));
@@ -30,6 +31,15 @@ namespace EscolaCleanArch.Infra.IoC
 
             services.AddScoped<IDiciplinaRepository, DiciplinaRepository>();
             services.AddScoped<IDiciplinaService, DiciplinaService>();
+
+            services.AddScoped<IAlunoRepository, AlunoRepository>();
+            services.AddScoped<IAlunoService, AlunoService>();
+
+            services.AddScoped<ICursoRepository, CursoRepository>();
+            services.AddScoped<ICursoService, CursoService>();
+
+            services.AddScoped<INotasAlunoRepository, NotasAlunoRepository>();
+            services.AddScoped<INotasAlunoService, NotasAlunoService>();
 
             return services;
         }

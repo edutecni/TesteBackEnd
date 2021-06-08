@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscolaCleanArch.Infra.IoC",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EscolaCleanArck.WebApi", "EscolaCleanArck.WebApi\EscolaCleanArck.WebApi.csproj", "{012CAAC8-5F33-4391-9141-BD3DB1E7AF9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEscolaClearArch", "TestEscolaClearArch\TestEscolaClearArch.csproj", "{A35526DC-183D-4751-B974-84A132474975}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{012CAAC8-5F33-4391-9141-BD3DB1E7AF9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{012CAAC8-5F33-4391-9141-BD3DB1E7AF9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{012CAAC8-5F33-4391-9141-BD3DB1E7AF9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A35526DC-183D-4751-B974-84A132474975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A35526DC-183D-4751-B974-84A132474975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A35526DC-183D-4751-B974-84A132474975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A35526DC-183D-4751-B974-84A132474975}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

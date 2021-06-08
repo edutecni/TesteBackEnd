@@ -11,9 +11,12 @@ namespace EscolaCleanArch.Application.Mappings
 {
     public class ViewModelToDomainMappingProfile : Profile
     {
+        // Princípio da inversão de dependência
         public ViewModelToDomainMappingProfile()
         {
             CreateMap<DiciplinaViewModel, Diciplina>();
+            CreateMap<AlunoViewModel, Aluno>();
+            CreateMap<CursoViewModel, Curso>();            
         }
     }
 }

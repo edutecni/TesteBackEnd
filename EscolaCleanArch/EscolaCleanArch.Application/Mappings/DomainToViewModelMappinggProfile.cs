@@ -14,6 +14,8 @@ namespace EscolaCleanArch.Application.Mappings
         public DomainToViewModelMappinggProfile()
         {
             CreateMap<Diciplina, DiciplinaViewModel>();
+            CreateMap<Aluno, AlunoViewModel>();
+            CreateMap<Curso, CursoViewModel>();
         }
     }
 }
