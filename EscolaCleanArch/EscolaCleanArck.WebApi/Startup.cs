@@ -1,6 +1,6 @@
 using EscolaCleanArch.Infra.Data;
 using EscolaCleanArch.Infra.IoC;
-using EscolaCleanArck.WebApi.MappingConfig;
+using EscolaCleanArch.WebApi.MappingConfig;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EscolaCleanArck.WebApi
+namespace EscolaCleanArch.WebApi
 {
     public class Startup 
     {
@@ -36,7 +36,7 @@ namespace EscolaCleanArck.WebApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "EscolaCleanArck.WebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "EscolaCleanArch.WebApi", Version = "v1" });
             });
         }
 
@@ -47,7 +47,7 @@ namespace EscolaCleanArck.WebApi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EscolaCleanArck.WebApi v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EscolaCleanArch.WebApi v1"));
             }
 
             app.UseHttpsRedirection();

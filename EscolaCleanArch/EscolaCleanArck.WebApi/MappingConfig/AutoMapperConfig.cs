@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EscolaCleanArck.WebApi.MappingConfig
+namespace EscolaCleanArch.WebApi.MappingConfig
 {
     public static class AutoMapperConfig
     {

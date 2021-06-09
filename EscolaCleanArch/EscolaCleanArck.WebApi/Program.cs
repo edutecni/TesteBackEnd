@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EscolaCleanArck.WebApi
+namespace EscolaCleanArch.WebApi
 {
     public class Program
     {

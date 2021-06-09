@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace TestEscolaClearArch
+namespace EscolaClearArch.Domain.Tests
 {
     public class UnitTest1
     {
