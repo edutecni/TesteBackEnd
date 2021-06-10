@@ -18,7 +18,9 @@ namespace EscolaCleanArch.Infra.Data.EntityConfiguration
             // Caso a Tabela Curso esteja vazia seão adicionados os registros abaixo
             builder.HasData(
                     new Curso { CursoId = 1, Nome = "Ensino Fundamental" },
-                    new Curso { CursoId = 2, Nome = "Ensino Médio"}
+                    new Curso { CursoId = 2, Nome = "Ensino Médio"},
+                    new Curso { CursoId = 3, Nome = "Faculdade" },
+                    new Curso { CursoId = 4, Nome = "Pós-Graduação" }
                 );
         }
     }

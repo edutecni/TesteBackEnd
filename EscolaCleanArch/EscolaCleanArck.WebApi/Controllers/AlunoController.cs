@@ -43,6 +43,33 @@ namespace EscolaCleanArch.WebApi.Controllers
             return aluno;
         }
 
+        [HttpGet("GetByName/{nome}")]
+        public async Task<AlunoViewModel> GetByNome(string nome)
+        {            
+            var ltAluno = await _alunoService.GetAlunos();
+            var aluno = ltAluno.Where(a => a.Nome == nome).FirstOrDefault();
+
+            return aluno;
+        }
+
+        [HttpGet("GetByName/{RA}")]
+        public async Task<AlunoViewModel> GetByRA(string ra)
+        {
+            var ltAluno = await _alunoService.GetAlunos();
+            var aluno = ltAluno.Where(a => a.RA == ra).FirstOrDefault();
+
+            return aluno;
+        }
+
+        [HttpGet("GetByName/{Curso}")]
+        public async Task<AlunoViewModel> GetByCurso(int? idCurso)
+        {
+            var ltAluno = await _alunoService.GetAlunos();
+            var aluno = ltAluno.Where(a => a.CursoId == idCurso).FirstOrDefault();
+
+            return aluno;
+        }
+
         [HttpPost("Edit/{id}")]        
         public void Edit(int id, AlunoViewModel aluno)
         {

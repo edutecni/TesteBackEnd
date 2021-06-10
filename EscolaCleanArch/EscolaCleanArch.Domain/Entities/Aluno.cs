@@ -15,6 +15,7 @@ namespace EscolaCleanArch.Domain.Entities
         public string RA { get; set; }
         public string Periodo { get; set; }
         public char Status { get; }
+        public int? CursoId { get; set; }
         public byte[] Foto { get; set; }
 
         public Curso Curso { get; set; }

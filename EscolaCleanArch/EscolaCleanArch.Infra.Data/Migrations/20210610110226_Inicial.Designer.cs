@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EscolaCleanArch.Infra.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210609110802_Inicial2")]
-    partial class Inicial2
+    [Migration("20210610110226_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,7 +28,7 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CursoId")
+                    b.Property<int>("CursoId")
                         .HasColumnType("int");
 
                     b.Property<byte[]>("Foto")
@@ -59,6 +59,7 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         new
                         {
                             AlunoId = 1,
+                            CursoId = 3,
                             Nome = "Eduardo Alves Canuto",
                             Periodo = "Manhã",
                             RA = "00001"
@@ -66,6 +67,7 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         new
                         {
                             AlunoId = 2,
+                            CursoId = 2,
                             Nome = "Viviane Fidelis do Nascimento",
                             Periodo = "Tarde",
                             RA = "00002"
@@ -73,6 +75,7 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         new
                         {
                             AlunoId = 3,
+                            CursoId = 1,
                             Nome = "Thiago Fidelis Alves Canuto",
                             Periodo = "Noite",
                             RA = "00003"
@@ -86,17 +89,12 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("DiciplinaId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("CursoId");
-
-                    b.HasIndex("DiciplinaId");
 
                     b.ToTable("Cursos");
 
@@ -110,6 +108,16 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         {
                             CursoId = 2,
                             Nome = "Ensino Médio"
+                        },
+                        new
+                        {
+                            CursoId = 3,
+                            Nome = "Faculdade"
+                        },
+                        new
+                        {
+                            CursoId = 4,
+                            Nome = "Pós-Graduação"
                         });
                 });
 
@@ -142,31 +150,91 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         new
                         {
                             DiciplinaId = 1,
-                            Nome = "Portugês",
+                            Nome = "Portugês Ensino Fundamental",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 2,
-                            Nome = "Matemática",
+                            Nome = "Matemática Ensino Fundamental",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 3,
-                            Nome = "Ciências",
+                            Nome = "Ciências Ensino Fundamental",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 4,
-                            Nome = "Histógia",
+                            Nome = "Histógia Ensino Fundamental",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 5,
-                            Nome = "Geográfia",
+                            Nome = "Geográfia Ensino Fundamental",
+                            NotaMinima = 7.0m
+                        },
+                        new
+                        {
+                            DiciplinaId = 6,
+                            Nome = "Portugês Ensino Médio",
+                            NotaMinima = 7.0m
+                        },
+                        new
+                        {
+                            DiciplinaId = 7,
+                            Nome = "Matemática Ensino Médio",
+                            NotaMinima = 7.0m
+                        },
+                        new
+                        {
+                            DiciplinaId = 8,
+                            Nome = "Fisíca Ensino Médio",
+                            NotaMinima = 7.0m
+                        },
+                        new
+                        {
+                            DiciplinaId = 9,
+                            Nome = "Histógia Ensino Médio",
+                            NotaMinima = 7.0m
+                        },
+                        new
+                        {
+                            DiciplinaId = 10,
+                            Nome = "Geográfia Ensino Médio",
+                            NotaMinima = 7.0m
+                        },
+                        new
+                        {
+                            DiciplinaId = 11,
+                            Nome = "Portugês Faculdade",
+                            NotaMinima = 7.0m
+                        },
+                        new
+                        {
+                            DiciplinaId = 12,
+                            Nome = "Matemática Faculdade",
+                            NotaMinima = 7.0m
+                        },
+                        new
+                        {
+                            DiciplinaId = 13,
+                            Nome = "Fisíca Faculdade",
+                            NotaMinima = 7.0m
+                        },
+                        new
+                        {
+                            DiciplinaId = 14,
+                            Nome = "Histógia Faculdade",
+                            NotaMinima = 7.0m
+                        },
+                        new
+                        {
+                            DiciplinaId = 15,
+                            Nome = "Geográfia Faculdade",
                             NotaMinima = 7.0m
                         });
                 });
@@ -205,26 +273,21 @@ namespace EscolaCleanArch.Infra.Data.Migrations
             modelBuilder.Entity("EscolaCleanArch.Domain.Entities.Aluno", b =>
                 {
                     b.HasOne("EscolaCleanArch.Domain.Entities.Curso", "Curso")
-                        .WithMany("AlunosCurso")
-                        .HasForeignKey("CursoId");
+                        .WithMany()
+                        .HasForeignKey("CursoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Curso");
                 });
 
-            modelBuilder.Entity("EscolaCleanArch.Domain.Entities.Curso", b =>
-                {
-                    b.HasOne("EscolaCleanArch.Domain.Entities.Diciplina", "Diciplina")
-                        .WithMany()
-                        .HasForeignKey("DiciplinaId");
-
-                    b.Navigation("Diciplina");
-                });
-
             modelBuilder.Entity("EscolaCleanArch.Domain.Entities.Diciplina", b =>
                 {
-                    b.HasOne("EscolaCleanArch.Domain.Entities.Curso", null)
-                        .WithMany("DiciplinasCurso")
+                    b.HasOne("EscolaCleanArch.Domain.Entities.Curso", "Curso")
+                        .WithMany()
                         .HasForeignKey("CursoId");
+
+                    b.Navigation("Curso");
                 });
 
             modelBuilder.Entity("EscolaCleanArch.Domain.Entities.NotasAluno", b =>
@@ -246,13 +309,6 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                     b.Navigation("Curso");
 
                     b.Navigation("Diciplina");
-                });
-
-            modelBuilder.Entity("EscolaCleanArch.Domain.Entities.Curso", b =>
-                {
-                    b.Navigation("AlunosCurso");
-
-                    b.Navigation("DiciplinasCurso");
                 });
 #pragma warning restore 612, 618
         }

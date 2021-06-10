@@ -29,8 +29,8 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                     Nome = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     RA = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     Periodo = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    Foto = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
-                    CursoId = table.Column<int>(type: "int", nullable: true)
+                    CursoId = table.Column<int>(type: "int", nullable: false),
+                    Foto = table.Column<byte[]>(type: "varbinary(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -40,7 +40,7 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         column: x => x.CursoId,
                         principalTable: "Cursos",
                         principalColumn: "CursoId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -99,22 +99,14 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Alunos",
-                columns: new[] { "AlunoId", "CursoId", "Foto", "Nome", "Periodo", "RA" },
-                values: new object[,]
-                {
-                    { 1, null, null, "Eduardo Alves Canuto", "Manhã", "00001" },
-                    { 2, null, null, "Viviane Fidelis do Nascimento", "Tarde", "00002" },
-                    { 3, null, null, "Thiago Fidelis Alves Canuto", "Noite", "00003" }
-                });
-
-            migrationBuilder.InsertData(
                 table: "Cursos",
                 columns: new[] { "CursoId", "Nome" },
                 values: new object[,]
                 {
                     { 1, "Ensino Fundamental" },
-                    { 2, "Ensino Médio" }
+                    { 2, "Ensino Médio" },
+                    { 3, "Faculdade" },
+                    { 4, "Pós-Graduação" }
                 });
 
             migrationBuilder.InsertData(
@@ -122,12 +114,37 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                 columns: new[] { "DiciplinaId", "CursoId", "Nome", "NotaMinima" },
                 values: new object[,]
                 {
-                    { 1, null, "Portugês", 7.0m },
-                    { 2, null, "Matemática", 7.0m },
-                    { 3, null, "Ciências", 7.0m },
-                    { 4, null, "Histógia", 7.0m },
-                    { 5, null, "Geográfia", 7.0m }
+                    { 13, null, "Fisíca Faculdade", 7.0m },
+                    { 12, null, "Matemática Faculdade", 7.0m },
+                    { 11, null, "Portugês Faculdade", 7.0m },
+                    { 10, null, "Geográfia Ensino Médio", 7.0m },
+                    { 9, null, "Histógia Ensino Médio", 7.0m },
+                    { 8, null, "Fisíca Ensino Médio", 7.0m },
+                    { 6, null, "Portugês Ensino Médio", 7.0m },
+                    { 14, null, "Histógia Faculdade", 7.0m },
+                    { 5, null, "Geográfia Ensino Fundamental", 7.0m },
+                    { 4, null, "Histógia Ensino Fundamental", 7.0m },
+                    { 3, null, "Ciências Ensino Fundamental", 7.0m },
+                    { 2, null, "Matemática Ensino Fundamental", 7.0m },
+                    { 1, null, "Portugês Ensino Fundamental", 7.0m },
+                    { 7, null, "Matemática Ensino Médio", 7.0m },
+                    { 15, null, "Geográfia Faculdade", 7.0m }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Alunos",
+                columns: new[] { "AlunoId", "CursoId", "Foto", "Nome", "Periodo", "RA" },
+                values: new object[] { 3, 1, null, "Thiago Fidelis Alves Canuto", "Noite", "00003" });
+
+            migrationBuilder.InsertData(
+                table: "Alunos",
+                columns: new[] { "AlunoId", "CursoId", "Foto", "Nome", "Periodo", "RA" },
+                values: new object[] { 2, 2, null, "Viviane Fidelis do Nascimento", "Tarde", "00002" });
+
+            migrationBuilder.InsertData(
+                table: "Alunos",
+                columns: new[] { "AlunoId", "CursoId", "Foto", "Nome", "Periodo", "RA" },
+                values: new object[] { 1, 3, null, "Eduardo Alves Canuto", "Manhã", "00001" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Alunos_CursoId",

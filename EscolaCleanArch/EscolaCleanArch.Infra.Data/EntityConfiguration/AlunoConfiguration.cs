@@ -19,9 +19,9 @@ namespace EscolaCleanArch.Infra.Data.EntityConfiguration
 
             // Caso a Tabela Aluno esteja vazia seão adicionados os registros abaixo
             builder.HasData(
-                    new Aluno { AlunoId = 1, Nome = "Eduardo Alves Canuto", Periodo = "Manhã", RA = "00001" },
-                    new Aluno { AlunoId = 2, Nome = "Viviane Fidelis do Nascimento", Periodo = "Tarde", RA = "00002" },
-                    new Aluno { AlunoId = 3, Nome = "Thiago Fidelis Alves Canuto", Periodo = "Noite", RA = "00003" }
+                    new Aluno { AlunoId = 1, Nome = "Eduardo Alves Canuto", Periodo = "Manhã", RA = "00001", CursoId = 3 },
+                    new Aluno { AlunoId = 2, Nome = "Viviane Fidelis do Nascimento", Periodo = "Tarde", RA = "00002", CursoId = 2 },
+                    new Aluno { AlunoId = 3, Nome = "Thiago Fidelis Alves Canuto", Periodo = "Noite", RA = "00003", CursoId = 1 }
                     
                 );
         }

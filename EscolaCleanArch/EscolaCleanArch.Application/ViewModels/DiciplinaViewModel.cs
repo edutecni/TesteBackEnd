@@ -21,5 +21,6 @@ namespace EscolaCleanArch.Application.ViewModels
         [Range(0, 100)]
         [DisplayName("Nota Mínima")]
         public decimal NotaMinima { get; set; }
+        public int CursoId { get; set; }
     }
 }

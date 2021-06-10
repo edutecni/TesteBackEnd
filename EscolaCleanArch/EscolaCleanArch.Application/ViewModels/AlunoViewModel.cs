@@ -27,5 +27,9 @@ namespace EscolaCleanArch.Application.ViewModels
         [Required(ErrorMessage = "O RA é obrigatório")]
         [DisplayName("RA")]
         public string RA { get; set; }
+
+        public int CursoId { get; set; }
+
+        public char Status { get; }
     }
 }
