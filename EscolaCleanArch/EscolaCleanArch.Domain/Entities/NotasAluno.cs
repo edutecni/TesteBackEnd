@@ -11,9 +11,17 @@ namespace EscolaCleanArch.Domain.Entities
     {
         [Key]
         public int NotaAlunoId { get; set; }
+
+        public int AlunoId { get; set; }
+
+        public int DiciplinaId { get; set; }
+
+        public int CursoId { get; set; }
+
+        public Decimal NotaDiciplina { get; set; }
+
         public Aluno Aluno { get; set; }
         public Curso Curso { get; set; }
-        public Diciplina Diciplina { get; set; }        
-        public Decimal NotaDiciplina { get; set; }
+        public Diciplina Diciplina { get; set; }
     }
 }

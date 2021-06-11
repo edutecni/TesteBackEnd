@@ -26,7 +26,7 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CursoId")
+                    b.Property<int?>("CursoId")
                         .HasColumnType("int");
 
                     b.Property<byte[]>("Foto")
@@ -77,6 +77,78 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                             Nome = "Thiago Fidelis Alves Canuto",
                             Periodo = "Noite",
                             RA = "00003"
+                        },
+                        new
+                        {
+                            AlunoId = 4,
+                            CursoId = 3,
+                            Nome = "Eduardo Pereira",
+                            Periodo = "Manhã",
+                            RA = "00004"
+                        },
+                        new
+                        {
+                            AlunoId = 5,
+                            CursoId = 3,
+                            Nome = "Elaine Farias",
+                            Periodo = "Tarde",
+                            RA = "00005"
+                        },
+                        new
+                        {
+                            AlunoId = 6,
+                            CursoId = 1,
+                            Nome = "Eduardo Cout",
+                            Periodo = "Noite",
+                            RA = "00006"
+                        },
+                        new
+                        {
+                            AlunoId = 7,
+                            CursoId = 3,
+                            Nome = "Gabriel Silva",
+                            Periodo = "Manhã",
+                            RA = "00007"
+                        },
+                        new
+                        {
+                            AlunoId = 8,
+                            CursoId = 2,
+                            Nome = "Viviane Araujo",
+                            Periodo = "Tarde",
+                            RA = "00008"
+                        },
+                        new
+                        {
+                            AlunoId = 9,
+                            CursoId = 1,
+                            Nome = "Thiago Silva Farias",
+                            Periodo = "Noite",
+                            RA = "00009"
+                        },
+                        new
+                        {
+                            AlunoId = 10,
+                            CursoId = 3,
+                            Nome = "Gabriel Medina",
+                            Periodo = "Manhã",
+                            RA = "00010"
+                        },
+                        new
+                        {
+                            AlunoId = 11,
+                            CursoId = 2,
+                            Nome = "Olávo Freitas",
+                            Periodo = "Tarde",
+                            RA = "00011"
+                        },
+                        new
+                        {
+                            AlunoId = 12,
+                            CursoId = 1,
+                            Nome = "Nicóle Kidman",
+                            Periodo = "Noite",
+                            RA = "00012"
                         });
                 });
 
@@ -148,90 +220,105 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         new
                         {
                             DiciplinaId = 1,
+                            CursoId = 1,
                             Nome = "Portugês Ensino Fundamental",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 2,
+                            CursoId = 1,
                             Nome = "Matemática Ensino Fundamental",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 3,
+                            CursoId = 1,
                             Nome = "Ciências Ensino Fundamental",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 4,
+                            CursoId = 1,
                             Nome = "Histógia Ensino Fundamental",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 5,
+                            CursoId = 1,
                             Nome = "Geográfia Ensino Fundamental",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 6,
+                            CursoId = 2,
                             Nome = "Portugês Ensino Médio",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 7,
+                            CursoId = 2,
                             Nome = "Matemática Ensino Médio",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 8,
+                            CursoId = 2,
                             Nome = "Fisíca Ensino Médio",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 9,
+                            CursoId = 2,
                             Nome = "Histógia Ensino Médio",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 10,
+                            CursoId = 2,
                             Nome = "Geográfia Ensino Médio",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 11,
+                            CursoId = 3,
                             Nome = "Portugês Faculdade",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 12,
+                            CursoId = 3,
                             Nome = "Matemática Faculdade",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 13,
+                            CursoId = 3,
                             Nome = "Fisíca Faculdade",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 14,
+                            CursoId = 3,
                             Nome = "Histógia Faculdade",
                             NotaMinima = 7.0m
                         },
                         new
                         {
                             DiciplinaId = 15,
+                            CursoId = 3,
                             Nome = "Geográfia Faculdade",
                             NotaMinima = 7.0m
                         });
@@ -244,13 +331,13 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AlunoId")
+                    b.Property<int>("AlunoId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CursoId")
+                    b.Property<int>("CursoId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DiciplinaId")
+                    b.Property<int>("DiciplinaId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("NotaDiciplina")
@@ -266,15 +353,55 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                     b.HasIndex("DiciplinaId");
 
                     b.ToTable("NotasAlunos");
+
+                    b.HasData(
+                        new
+                        {
+                            NotaAlunoId = 1,
+                            AlunoId = 1,
+                            CursoId = 3,
+                            DiciplinaId = 11,
+                            NotaDiciplina = 7.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 3,
+                            AlunoId = 1,
+                            CursoId = 3,
+                            DiciplinaId = 12,
+                            NotaDiciplina = 9.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 4,
+                            AlunoId = 1,
+                            CursoId = 3,
+                            DiciplinaId = 13,
+                            NotaDiciplina = 5.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 5,
+                            AlunoId = 1,
+                            CursoId = 3,
+                            DiciplinaId = 14,
+                            NotaDiciplina = 8.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 6,
+                            AlunoId = 1,
+                            CursoId = 3,
+                            DiciplinaId = 15,
+                            NotaDiciplina = 6.0m
+                        });
                 });
 
             modelBuilder.Entity("EscolaCleanArch.Domain.Entities.Aluno", b =>
                 {
                     b.HasOne("EscolaCleanArch.Domain.Entities.Curso", "Curso")
                         .WithMany()
-                        .HasForeignKey("CursoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CursoId");
 
                     b.Navigation("Curso");
                 });
@@ -292,15 +419,21 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                 {
                     b.HasOne("EscolaCleanArch.Domain.Entities.Aluno", "Aluno")
                         .WithMany()
-                        .HasForeignKey("AlunoId");
+                        .HasForeignKey("AlunoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("EscolaCleanArch.Domain.Entities.Curso", "Curso")
                         .WithMany()
-                        .HasForeignKey("CursoId");
+                        .HasForeignKey("CursoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("EscolaCleanArch.Domain.Entities.Diciplina", "Diciplina")
                         .WithMany()
-                        .HasForeignKey("DiciplinaId");
+                        .HasForeignKey("DiciplinaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Aluno");
 

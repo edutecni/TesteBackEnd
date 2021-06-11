@@ -12,9 +12,23 @@ namespace EscolaCleanArch.Application.ViewModels
     {
         public int NotasAlunoId { get; set; }        
 
-        [Required(ErrorMessage ="A nota é obrigatória")]
+        //[Required(ErrorMessage ="A nota da diciplina é obrigatória")]
         [Range(0, 10)]
-        [DisplayName("Nota")]
-        public decimal Nota { get; set; }
+        [DisplayName("Nota Diciplina")]
+        public Decimal NotaDiciplina { get; set; }
+
+        [Required(ErrorMessage = "O Id do Aluno é obrigatório")]        
+        [DisplayName("Nota Diciplina")]
+        public int AlunoId { get; set; }
+
+        [Required(ErrorMessage = "O Id da Diciplina é obrigatória")]
+        [DisplayName("Nota Diciplina")]
+        public int DiciplinaId { get; set; }
+
+        [Required(ErrorMessage = "O Id do Curso é obrigatório")]
+        [DisplayName("Nota Diciplina")]
+        public int CursoId { get; set; }
+
+       
     }
 }

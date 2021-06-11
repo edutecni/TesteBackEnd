@@ -43,16 +43,16 @@ namespace EscolaCleanArch.WebApi.Controllers
             return aluno;
         }
 
-        [HttpGet("GetByName/{nome}")]
-        public async Task<AlunoViewModel> GetByNome(string nome)
+        [HttpGet("GetByNome/{nome}")]
+        public async Task<IEnumerable<AlunoViewModel>> GetByNome(string nome)
         {            
             var ltAluno = await _alunoService.GetAlunos();
-            var aluno = ltAluno.Where(a => a.Nome == nome).FirstOrDefault();
+            var aluno = ltAluno.Where(a => a.Nome.Contains(nome));
 
             return aluno;
         }
 
-        [HttpGet("GetByName/{RA}")]
+        [HttpGet("GetByRA/{ra}")]
         public async Task<AlunoViewModel> GetByRA(string ra)
         {
             var ltAluno = await _alunoService.GetAlunos();
@@ -61,7 +61,7 @@ namespace EscolaCleanArch.WebApi.Controllers
             return aluno;
         }
 
-        [HttpGet("GetByName/{Curso}")]
+        [HttpGet("GetByCurso/{idCurso}")]
         public async Task<AlunoViewModel> GetByCurso(int? idCurso)
         {
             var ltAluno = await _alunoService.GetAlunos();
