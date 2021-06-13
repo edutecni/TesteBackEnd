@@ -14,16 +14,26 @@ namespace EscolaCleanArch.WebApi.Controllers
     public class AlunoController : ControllerBase
     {
         private readonly IAlunoService _alunoService;
-        public AlunoController(IAlunoService alunoService)
+        private readonly ICursoService _cursoService;
+        private readonly INotasAlunoService _notasAlunoService;
+        public AlunoController(IAlunoService alunoService, ICursoService cursoService, INotasAlunoService notasAlunoService)
         {
             _alunoService = alunoService;
+            _cursoService = cursoService;
+            _notasAlunoService = notasAlunoService; ;
         }
 
         [HttpGet("GetAlunos")]
         public async Task<IEnumerable<AlunoViewModel>> GetAlunos()
         {
-            var result = await _alunoService.GetAlunos();
-            return result;
+            var ltAlunos = await _alunoService.GetAlunos();
+
+            foreach (var aluno in ltAlunos)
+            {
+                aluno.Curso = await _cursoService.GetById(aluno.CursoId);
+            }
+
+            return ltAlunos;
         }
 
         [HttpPost("Add")]        
@@ -38,36 +48,50 @@ namespace EscolaCleanArch.WebApi.Controllers
         [HttpGet("GetById/{id}")]
         public async Task<AlunoViewModel> GetById(int? id)
         {
-            var aluno = await _alunoService.GetById(id);            
+            var aluno = await _alunoService.GetById(id);
+            
+            aluno.Curso = await _cursoService.GetById(aluno.CursoId);
 
             return aluno;
         }
 
         [HttpGet("GetByNome/{nome}")]
         public async Task<IEnumerable<AlunoViewModel>> GetByNome(string nome)
-        {            
-            var ltAluno = await _alunoService.GetAlunos();
-            var aluno = ltAluno.Where(a => a.Nome.Contains(nome));
+        {
+            var ltAlunos = _alunoService.GetAlunos().Result.Where(a => a.Nome.Contains(nome));            
 
-            return aluno;
+            // Popula Cursos e Notas
+            foreach (var aluno in ltAlunos)
+            {
+                aluno.Curso = await _cursoService.GetById(aluno.CursoId);
+                aluno.Notas = await _notasAlunoService.GetById(aluno.AlunoId);
+            }
+
+            return ltAlunos;
         }
 
         [HttpGet("GetByRA/{ra}")]
         public async Task<AlunoViewModel> GetByRA(string ra)
         {
-            var ltAluno = await _alunoService.GetAlunos();
-            var aluno = ltAluno.Where(a => a.RA == ra).FirstOrDefault();
+            var aluno =  _alunoService.GetAlunos().Result.Where(a => a.RA == ra).FirstOrDefault();
+
+            aluno.Curso = await _cursoService.GetById(aluno.CursoId);
 
             return aluno;
         }
 
         [HttpGet("GetByCurso/{idCurso}")]
-        public async Task<AlunoViewModel> GetByCurso(int? idCurso)
+        public async Task<IEnumerable<AlunoViewModel>> GetByCurso(int? idCurso)
         {
-            var ltAluno = await _alunoService.GetAlunos();
-            var aluno = ltAluno.Where(a => a.CursoId == idCurso).FirstOrDefault();
+            var ltAlunos =  _alunoService.GetAlunos().Result.Where(a => a.CursoId == idCurso);
 
-            return aluno;
+            // Popula Cursos
+            foreach (var aluno in ltAlunos)
+            {
+                aluno.Curso = await _cursoService.GetById(aluno.CursoId);
+            }
+
+            return ltAlunos;
         }
 
         [HttpPost("Edit/{id}")]        

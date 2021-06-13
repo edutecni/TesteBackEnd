@@ -43,6 +43,19 @@ namespace EscolaCleanArch.WebApi.Controllers
             return notasAluno;
         }
 
+        [HttpGet("GetByAlunoId/{alunoId}")]
+        public async Task<IEnumerable<NotasAlunoViewModel>> GetByAlunoId(int? alunoId)
+        {
+            var result = await _notasAlunoService.GetNotasAlunos();               
+
+            if (alunoId > 0)
+            {
+                result = result.Where(n => n.AlunoId == alunoId);
+            }            
+
+            return result;
+        }
+
         [HttpPost("Edit/{id}")]        
         public void Edit(int id, NotasAlunoViewModel notasAluno)
         {

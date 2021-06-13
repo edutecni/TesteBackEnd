@@ -10,9 +10,9 @@ namespace EscolaCleanArch.Application.ViewModels
 {
     public class NotasAlunoViewModel
     {
-        public int NotasAlunoId { get; set; }        
+        public int NotaAlunoId { get; set; }        
 
-        //[Required(ErrorMessage ="A nota da diciplina é obrigatória")]
+        [Required(ErrorMessage ="A nota da diciplina é obrigatória")]
         [Range(0, 10)]
         [DisplayName("Nota Diciplina")]
         public Decimal NotaDiciplina { get; set; }

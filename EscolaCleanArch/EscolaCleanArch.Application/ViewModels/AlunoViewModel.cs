@@ -31,5 +31,9 @@ namespace EscolaCleanArch.Application.ViewModels
         public int CursoId { get; set; }
 
         public char Status { get; }
+        
+        public CursoViewModel Curso { get; set; }
+
+        public NotasAlunoViewModel Notas { get; set; }
     }
 }

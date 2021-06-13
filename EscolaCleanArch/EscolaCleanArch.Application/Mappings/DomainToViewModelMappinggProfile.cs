@@ -15,7 +15,8 @@ namespace EscolaCleanArch.Application.Mappings
         {
             CreateMap<Diciplina, DiciplinaViewModel>();
             CreateMap<Aluno, AlunoViewModel>();
-            CreateMap<Curso, CursoViewModel>();
+            CreateMap<Curso, CursoViewModel>(); 
+            CreateMap<NotasAluno, NotasAlunoViewModel> ();
         }
     }
 }

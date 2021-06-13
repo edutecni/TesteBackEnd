@@ -365,7 +365,7 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         },
                         new
                         {
-                            NotaAlunoId = 3,
+                            NotaAlunoId = 2,
                             AlunoId = 1,
                             CursoId = 3,
                             DiciplinaId = 12,
@@ -373,7 +373,7 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         },
                         new
                         {
-                            NotaAlunoId = 4,
+                            NotaAlunoId = 3,
                             AlunoId = 1,
                             CursoId = 3,
                             DiciplinaId = 13,
@@ -381,7 +381,7 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         },
                         new
                         {
-                            NotaAlunoId = 5,
+                            NotaAlunoId = 4,
                             AlunoId = 1,
                             CursoId = 3,
                             DiciplinaId = 14,
@@ -389,11 +389,251 @@ namespace EscolaCleanArch.Infra.Data.Migrations
                         },
                         new
                         {
-                            NotaAlunoId = 6,
+                            NotaAlunoId = 5,
                             AlunoId = 1,
                             CursoId = 3,
                             DiciplinaId = 15,
                             NotaDiciplina = 6.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 6,
+                            AlunoId = 4,
+                            CursoId = 3,
+                            DiciplinaId = 11,
+                            NotaDiciplina = 7.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 7,
+                            AlunoId = 4,
+                            CursoId = 3,
+                            DiciplinaId = 12,
+                            NotaDiciplina = 7.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 8,
+                            AlunoId = 4,
+                            CursoId = 3,
+                            DiciplinaId = 13,
+                            NotaDiciplina = 5.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 9,
+                            AlunoId = 4,
+                            CursoId = 3,
+                            DiciplinaId = 14,
+                            NotaDiciplina = 8.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 10,
+                            AlunoId = 4,
+                            CursoId = 3,
+                            DiciplinaId = 15,
+                            NotaDiciplina = 9.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 11,
+                            AlunoId = 5,
+                            CursoId = 3,
+                            DiciplinaId = 11,
+                            NotaDiciplina = 10.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 12,
+                            AlunoId = 5,
+                            CursoId = 3,
+                            DiciplinaId = 12,
+                            NotaDiciplina = 9.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 13,
+                            AlunoId = 5,
+                            CursoId = 3,
+                            DiciplinaId = 13,
+                            NotaDiciplina = 8.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 14,
+                            AlunoId = 5,
+                            CursoId = 3,
+                            DiciplinaId = 14,
+                            NotaDiciplina = 5.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 15,
+                            AlunoId = 5,
+                            CursoId = 3,
+                            DiciplinaId = 15,
+                            NotaDiciplina = 6.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 16,
+                            AlunoId = 3,
+                            CursoId = 1,
+                            DiciplinaId = 1,
+                            NotaDiciplina = 7.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 17,
+                            AlunoId = 3,
+                            CursoId = 1,
+                            DiciplinaId = 2,
+                            NotaDiciplina = 9.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 18,
+                            AlunoId = 3,
+                            CursoId = 1,
+                            DiciplinaId = 3,
+                            NotaDiciplina = 9.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 19,
+                            AlunoId = 3,
+                            CursoId = 1,
+                            DiciplinaId = 4,
+                            NotaDiciplina = 5.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 20,
+                            AlunoId = 3,
+                            CursoId = 1,
+                            DiciplinaId = 5,
+                            NotaDiciplina = 9.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 21,
+                            AlunoId = 6,
+                            CursoId = 1,
+                            DiciplinaId = 1,
+                            NotaDiciplina = 6.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 22,
+                            AlunoId = 6,
+                            CursoId = 1,
+                            DiciplinaId = 2,
+                            NotaDiciplina = 7.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 23,
+                            AlunoId = 6,
+                            CursoId = 1,
+                            DiciplinaId = 3,
+                            NotaDiciplina = 9.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 24,
+                            AlunoId = 6,
+                            CursoId = 1,
+                            DiciplinaId = 4,
+                            NotaDiciplina = 8.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 25,
+                            AlunoId = 6,
+                            CursoId = 1,
+                            DiciplinaId = 5,
+                            NotaDiciplina = 10.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 26,
+                            AlunoId = 2,
+                            CursoId = 2,
+                            DiciplinaId = 6,
+                            NotaDiciplina = 10.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 27,
+                            AlunoId = 2,
+                            CursoId = 2,
+                            DiciplinaId = 7,
+                            NotaDiciplina = 9.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 28,
+                            AlunoId = 2,
+                            CursoId = 2,
+                            DiciplinaId = 8,
+                            NotaDiciplina = 9.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 29,
+                            AlunoId = 2,
+                            CursoId = 2,
+                            DiciplinaId = 9,
+                            NotaDiciplina = 9.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 30,
+                            AlunoId = 2,
+                            CursoId = 2,
+                            DiciplinaId = 10,
+                            NotaDiciplina = 10.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 31,
+                            AlunoId = 8,
+                            CursoId = 2,
+                            DiciplinaId = 6,
+                            NotaDiciplina = 8.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 32,
+                            AlunoId = 8,
+                            CursoId = 2,
+                            DiciplinaId = 7,
+                            NotaDiciplina = 8.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 33,
+                            AlunoId = 8,
+                            CursoId = 2,
+                            DiciplinaId = 8,
+                            NotaDiciplina = 9.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 34,
+                            AlunoId = 8,
+                            CursoId = 2,
+                            DiciplinaId = 9,
+                            NotaDiciplina = 8.0m
+                        },
+                        new
+                        {
+                            NotaAlunoId = 35,
+                            AlunoId = 8,
+                            CursoId = 2,
+                            DiciplinaId = 10,
+                            NotaDiciplina = 10.0m
                         });
                 });
 
