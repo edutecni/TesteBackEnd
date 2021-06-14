@@ -35,5 +35,12 @@ namespace EscolaClearArch.Domain.Tests
             Action action = () => new Aluno("Aluno Teste", "00001", string.Empty,  1);
             action.Should().Throw<EscolaCleanArch.Domain.Validation.DomainExceptionValidation>().WithMessage("O Período é obrigatório");
         }
+
+        [Fact]
+        public void CriarAluno_ComIdCursoVazio_DomainExceptionRequiredIdCursoObrigatorio()
+        {
+            Action action = () => new Aluno("Aluno Teste", "00001", "Manhã", int.MinValue);
+            action.Should().Throw<EscolaCleanArch.Domain.Validation.DomainExceptionValidation>().WithMessage("O CursoId é obrigatório");
+        }
     }
 }
