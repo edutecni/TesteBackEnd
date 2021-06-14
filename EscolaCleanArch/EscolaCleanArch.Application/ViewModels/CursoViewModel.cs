@@ -17,9 +17,6 @@ namespace EscolaCleanArch.Application.ViewModels
         [MaxLength(50)]
         [DisplayName("Nome")]
         public string Nome { get; set; }
-        [Required(ErrorMessage ="A nota minima é obrigatória")]
-        [Range(0, 10)]
-        [DisplayName("Nota Mínima")]
-        public decimal NotaMinima { get; set; }
+        
     }
 }

@@ -19,22 +19,21 @@ namespace EscolaCleanArch.Infra.Data.EntityConfiguration
 
             // Caso a Tabela Aluno esteja vazia seão adicionados os registros abaixo
             builder.HasData(
-                    new Aluno { AlunoId = 1, Nome = "Eduardo Alves Canuto", Periodo = "Manhã", RA = "00001", CursoId = 3 },
-                    new Aluno { AlunoId = 2, Nome = "Viviane Fidelis do Nascimento", Periodo = "Tarde", RA = "00002", CursoId = 2 },
-                    new Aluno { AlunoId = 3, Nome = "Thiago Fidelis Alves Canuto", Periodo = "Noite", RA = "00003", CursoId = 1 },
-
-
-                    new Aluno { AlunoId = 4, Nome = "Eduardo Pereira", Periodo = "Manhã", RA = "00004", CursoId = 3 },
-                    new Aluno { AlunoId = 5, Nome = "Elaine Farias", Periodo = "Tarde", RA = "00005", CursoId = 3 },
-                    new Aluno { AlunoId = 6, Nome = "Eduardo Cout", Periodo = "Noite", RA = "00006", CursoId = 1 },
-
-                    new Aluno { AlunoId = 7, Nome = "Gabriel Silva", Periodo = "Manhã", RA = "00007", CursoId = 3 },
-                    new Aluno { AlunoId = 8, Nome = "Viviane Araujo", Periodo = "Tarde", RA = "00008", CursoId = 2 },
-                    new Aluno { AlunoId = 9, Nome = "Thiago Silva Farias", Periodo = "Noite", RA = "00009", CursoId = 1 },
-
-                     new Aluno { AlunoId = 10, Nome = "Gabriel Medina", Periodo = "Manhã", RA = "00010", CursoId = 3 },
-                    new Aluno { AlunoId = 11, Nome = "Olávo Freitas", Periodo = "Tarde", RA = "00011", CursoId = 2 },
-                    new Aluno { AlunoId = 12, Nome = "Nicóle Kidman", Periodo = "Noite", RA = "00012", CursoId = 1 }
+                    
+                    new Aluno (1, "Eduardo Alves Canuto"            , "00001", "Manhã" 3 ),
+                    new Aluno (2, "Viviane Fidelis do Nascimento"   , "00002", "Tarde" 2 ),
+                    new Aluno (3, "Thiago Fidelis Alves Canuto"     , "00003", "Noite" 1 ),                               
+                    new Aluno (4, "Eduardo Pereira"                 , "00004", "Manhã" 3),
+                    new Aluno (5, "Elaine Farias"                   , "00005", "Tarde" 3),
+                    new Aluno (6, "Eduardo Cout"                    , "00006", "Noite" 1),
+                               
+                    new Aluno (7, "Gabriel Silva"                   , "00007", "Manhã" 3),
+                    new Aluno (8, "Viviane Araujo"                  , "00008", "Tarde" 2),
+                    new Aluno (9, "Thiago Silva Farias"             , "00009", "Noite" 1),
+                               
+                     new Aluno(10, "Gabriel Medina"                 , "00010", "Manhã" 3),
+                    new Aluno (11, "Olávo Freitas"                  , "00011", "Tarde" 2),
+                    new Aluno (12, "Nicóle Kidman"                  , "00012", "Noite" 1)
 
                 );
         }

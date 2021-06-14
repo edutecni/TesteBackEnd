@@ -27,12 +27,7 @@ namespace EscolaCleanArch.WebApi.Controllers
         public async Task<IEnumerable<AlunoViewModel>> GetAlunos()
         {
             var ltAlunos = await _alunoService.GetAlunos();
-
-            foreach (var aluno in ltAlunos)
-            {
-                aluno.Curso = await _cursoService.GetById(aluno.CursoId);
-            }
-
+            
             return ltAlunos;
         }
 
@@ -48,9 +43,18 @@ namespace EscolaCleanArch.WebApi.Controllers
         [HttpGet("GetById/{id}")]
         public async Task<AlunoViewModel> GetById(int? id)
         {
-            var aluno = await _alunoService.GetById(id);
+            var aluno = await _alunoService.GetById(id);             
+            aluno.Curso = await _cursoService.GetById(aluno.CursoId);           
             
-            aluno.Curso = await _cursoService.GetById(aluno.CursoId);
+            aluno.Notas = GetByAlunoId(aluno.CursoId);
+
+            foreach (var nota in aluno.Notas)
+            {
+                if (nota != null && nota.NotaDiciplina < 7 )                
+                    aluno.Status = "Reprovado";
+                else
+                    aluno.Status = "Aprovado";
+            }
 
             return aluno;
         }
@@ -64,7 +68,21 @@ namespace EscolaCleanArch.WebApi.Controllers
             foreach (var aluno in ltAlunos)
             {
                 aluno.Curso = await _cursoService.GetById(aluno.CursoId);
-                aluno.Notas = await _notasAlunoService.GetById(aluno.AlunoId);
+                aluno.Notas = (IEnumerable<NotasAlunoViewModel>)(GetByAlunoId(aluno.CursoId));
+
+                aluno.Notas = GetByAlunoId(aluno.CursoId); 
+                
+                foreach (var nota in aluno.Notas)
+                {
+                    if (nota.NotaDiciplina > -1 && nota.NotaDiciplina < 7)
+                    {
+                        aluno.Status = "Reprovado";
+                        break;
+                    }
+                    else if (nota.NotaDiciplina >= 7)
+                        aluno.Status = "Aprovado";
+                }
+
             }
 
             return ltAlunos;
@@ -74,8 +92,20 @@ namespace EscolaCleanArch.WebApi.Controllers
         public async Task<AlunoViewModel> GetByRA(string ra)
         {
             var aluno =  _alunoService.GetAlunos().Result.Where(a => a.RA == ra).FirstOrDefault();
-
             aluno.Curso = await _cursoService.GetById(aluno.CursoId);
+
+            aluno.Notas = GetByAlunoId(aluno.CursoId);
+
+            foreach (var nota in aluno.Notas)
+            {
+                if (nota.NotaDiciplina > -1 && nota.NotaDiciplina < 7)
+                {
+                    aluno.Status = "Reprovado";
+                    break;
+                }
+                else if (nota.NotaDiciplina >= 7)
+                    aluno.Status = "Aprovado";
+            }
 
             return aluno;
         }
@@ -89,6 +119,18 @@ namespace EscolaCleanArch.WebApi.Controllers
             foreach (var aluno in ltAlunos)
             {
                 aluno.Curso = await _cursoService.GetById(aluno.CursoId);
+                aluno.Notas = GetByAlunoId(aluno.CursoId);
+
+                foreach (var nota in aluno.Notas)
+                {
+                    if (nota.NotaDiciplina > -1 && nota.NotaDiciplina < 7)
+                    {
+                        aluno.Status = "Reprovado";
+                        break;
+                    }
+                    else if (nota.NotaDiciplina >= 7)
+                        aluno.Status = "Aprovado";
+                }
             }
 
             return ltAlunos;
@@ -124,6 +166,20 @@ namespace EscolaCleanArch.WebApi.Controllers
                     throw;
                 }
             }
+        }
+
+        private IEnumerable<NotasAlunoViewModel> GetByAlunoId(int? alunoId)
+        {
+            var ltNotas = _notasAlunoService.GetNotasAlunos();
+            IEnumerable<NotasAlunoViewModel> resultado = null;
+
+            if (alunoId > 0)
+            {
+                var ltNotasDoAluno = ltNotas.Result.Where(n => n.AlunoId == (int)alunoId);
+                resultado = (IEnumerable<NotasAlunoViewModel>)ltNotasDoAluno;
+            }
+
+            return resultado;
         }
     }
 }

@@ -30,10 +30,9 @@ namespace EscolaCleanArch.Application.ViewModels
 
         public int CursoId { get; set; }
 
-        public char Status { get; }
+        public string Status { get; set; }
         
         public CursoViewModel Curso { get; set; }
-
-        public NotasAlunoViewModel Notas { get; set; }
+        public IEnumerable<NotasAlunoViewModel> Notas { get; set; }
     }
 }
