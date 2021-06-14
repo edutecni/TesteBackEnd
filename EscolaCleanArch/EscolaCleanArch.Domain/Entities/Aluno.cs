@@ -24,6 +24,11 @@ namespace EscolaCleanArch.Domain.Entities
         public Curso Curso { get; set; }
         public  IEnumerable<NotasAluno> Notas { get; set; }
 
+        public Aluno()
+        {
+
+        }
+
         // Utilizando-se do princípio do DDD onde a própria classe se testa e garante a sua integridade
         // Por falta de tempo optei por aplicar essa metodologia somente na classe Aluno.
         public Aluno(string nome, string ra, string periodo, int cursoId)
