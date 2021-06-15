@@ -21,8 +21,8 @@ namespace EscolaCleanArch.Domain.Entities
         public int? CursoId { get; private set; }
         public byte[] Foto { get; private set; }
 
-        public Curso Curso { get; set; }
-        public  IEnumerable<NotasAluno> Notas { get; set; }
+        //public Curso Curso { get; set; }
+        //public  IEnumerable<NotasAluno> Notas { get; set; }
 
         public Aluno()
         {

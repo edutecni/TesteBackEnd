@@ -14,6 +14,6 @@ namespace EscolaCleanArch.Domain.Entities
         public string Nome { get; set; }
         public decimal NotaMinima { get; set; }
         public int? CursoId { get; set; }
-        public Curso Curso { get; set; }
+        //public Curso Curso { get; set; }
     }
 }

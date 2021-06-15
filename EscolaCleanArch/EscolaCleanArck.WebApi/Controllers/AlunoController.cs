@@ -20,14 +20,35 @@ namespace EscolaCleanArch.WebApi.Controllers
         {
             _alunoService = alunoService;
             _cursoService = cursoService;
-            _notasAlunoService = notasAlunoService; ;
+            _notasAlunoService = notasAlunoService; 
         }
 
         [HttpGet("GetAlunos")]
         public async Task<IEnumerable<AlunoViewModel>> GetAlunos()
         {
             var ltAlunos = await _alunoService.GetAlunos();
-            
+
+            // Popula Cursos e Notas
+            foreach (var aluno in ltAlunos)
+            {
+                aluno.Curso = await _cursoService.GetById(aluno.CursoId);
+               // aluno.Notas = (IEnumerable<NotasAlunoViewModel>)(GetByAlunoId(aluno.CursoId).Where(n => n.AlunoId == aluno.AlunoId));
+
+                aluno.Notas = GetByAlunoId(aluno.AlunoId);
+
+                foreach (var nota in aluno.Notas)
+                {
+                    if (nota.NotaDiciplina > -1 && nota.NotaDiciplina < 7)
+                    {
+                        aluno.Status = "Reprovado";
+                        break;
+                    }
+                    else if (nota.NotaDiciplina >= 7)
+                        aluno.Status = "Aprovado";
+                }
+
+            }
+
             return ltAlunos;
         }
 
@@ -43,18 +64,21 @@ namespace EscolaCleanArch.WebApi.Controllers
         [HttpGet("GetById/{id}")]
         public async Task<AlunoViewModel> GetById(int? id)
         {
-            var aluno = await _alunoService.GetById(id);             
-            aluno.Curso = await _cursoService.GetById(aluno.CursoId);           
-            
-            aluno.Notas = GetByAlunoId(aluno.CursoId);
-
-            foreach (var nota in aluno.Notas)
+            var aluno = await _alunoService.GetById(id);
+            if (aluno is not null)
             {
-                if (nota != null && nota.NotaDiciplina < 7 )                
-                    aluno.Status = "Reprovado";
-                else
-                    aluno.Status = "Aprovado";
-            }
+                aluno.Curso = await _cursoService.GetById(aluno.CursoId);
+
+                aluno.Notas = GetByAlunoId(aluno.CursoId).Where(n => n.AlunoId == aluno.AlunoId);
+
+                foreach (var nota in aluno.Notas)
+                {
+                    if (nota != null && nota.NotaDiciplina < 7)
+                        aluno.Status = "Reprovado";
+                    else
+                        aluno.Status = "Aprovado";
+                }
+            }            
 
             return aluno;
         }
@@ -170,14 +194,10 @@ namespace EscolaCleanArch.WebApi.Controllers
 
         private IEnumerable<NotasAlunoViewModel> GetByAlunoId(int? alunoId)
         {
-            var ltNotas = _notasAlunoService.GetNotasAlunos();
+            var ltNotas = _notasAlunoService.GetNotasAlunos().Result.Where(n => n.AlunoId == alunoId);
             IEnumerable<NotasAlunoViewModel> resultado = null;
-
-            if (alunoId > 0)
-            {
-                var ltNotasDoAluno = ltNotas.Result.Where(n => n.AlunoId == (int)alunoId);
-                resultado = (IEnumerable<NotasAlunoViewModel>)ltNotasDoAluno;
-            }
+            
+           resultado = (IEnumerable<NotasAlunoViewModel>)ltNotas;
 
             return resultado;
         }

@@ -20,8 +20,8 @@ namespace EscolaCleanArch.Domain.Entities
 
         public Decimal NotaDiciplina { get; set; }
 
-        public Aluno Aluno { get; set; }
-        public Curso Curso { get; set; }
-        public Diciplina Diciplina { get; set; }
+        //public Aluno Aluno { get; set; }
+        //public Curso Curso { get; set; }
+        //public Diciplina Diciplina { get; set; }
     }
 }
