@@ -32,7 +32,6 @@ namespace EscolaCleanArch.WebApi.Controllers
             foreach (var aluno in ltAlunos)
             {
                 aluno.Curso = await _cursoService.GetById(aluno.CursoId);
-               // aluno.Notas = (IEnumerable<NotasAlunoViewModel>)(GetByAlunoId(aluno.CursoId).Where(n => n.AlunoId == aluno.AlunoId));
 
                 aluno.Notas = GetByAlunoId(aluno.AlunoId);
 
