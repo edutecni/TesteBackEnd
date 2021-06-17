@@ -66,6 +66,8 @@ namespace EscolaCleanArch.WebApi.Controllers
             {
                 try
                 {
+                    
+                    curso.CursoId = id;                    
                     _cursoService.Remove(curso);
                 }
                 catch (Exception)

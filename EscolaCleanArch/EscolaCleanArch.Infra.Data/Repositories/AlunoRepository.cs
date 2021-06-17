@@ -30,7 +30,7 @@ namespace EscolaCleanArch.Infra.Data.Repositories
         }
 
         public void Add(Aluno aluno)
-        {
+        {            
             _context.Add(aluno);
             _context.SaveChanges();
         }
@@ -43,7 +43,8 @@ namespace EscolaCleanArch.Infra.Data.Repositories
 
         public void Remove(Aluno aluno)
         {
-            _context.Remove(aluno);
+            var objResult = GetById(aluno.AlunoId).Result;
+            _context.Remove(objResult);
             _context.SaveChanges();
         }
     }

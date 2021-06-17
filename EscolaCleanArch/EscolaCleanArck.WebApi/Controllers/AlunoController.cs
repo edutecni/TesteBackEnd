@@ -166,6 +166,7 @@ namespace EscolaCleanArch.WebApi.Controllers
             {
                 try
                 {
+                    aluno.AlunoId = id;
                     _alunoService.Update(aluno);
                 }
                 catch (Exception)
@@ -182,6 +183,7 @@ namespace EscolaCleanArch.WebApi.Controllers
             {
                 try
                 {
+                    aluno.AlunoId = id;
                     _alunoService.Remove(aluno);
                 }
                 catch (Exception)
