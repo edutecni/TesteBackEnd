@@ -44,8 +44,12 @@ namespace EscolaCleanArch.Infra.Data.Repositories
         public void Remove(Aluno aluno)
         {
             var objResult = GetById(aluno.AlunoId).Result;
-            _context.Remove(objResult);
-            _context.SaveChanges();
+            if (objResult is not null)
+            {
+                _context.Remove(objResult);
+                _context.SaveChanges();
+            }
+           
         }
     }
 }

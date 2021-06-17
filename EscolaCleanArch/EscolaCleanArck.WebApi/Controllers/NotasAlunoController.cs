@@ -80,6 +80,7 @@ namespace EscolaCleanArch.WebApi.Controllers
             {
                 try
                 {
+                    notasAluno.NotaAlunoId = id;
                     _notasAlunoService.Remove(notasAluno);
                 }
                 catch (Exception)

@@ -66,6 +66,7 @@ namespace EscolaCleanArch.WebApi.Controllers
             {
                 try
                 {
+                    diciplina.DiciplinaId = id;
                     var result =_diciplinaService.GetById(id).Result;
                     _diciplinaService.Remove(result);
                 }
