@@ -162,7 +162,7 @@ namespace EscolaCleanArch.WebApi.Controllers
         [HttpPost("Edit/{id}")]        
         public void Edit(int id, AlunoViewModel aluno)
         {
-            if (id > 0)
+            if (id > 0 && aluno != null)
             {
                 try
                 {

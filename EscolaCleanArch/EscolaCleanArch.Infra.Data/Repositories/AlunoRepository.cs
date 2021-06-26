@@ -37,6 +37,11 @@ namespace EscolaCleanArch.Infra.Data.Repositories
 
         public void Update(Aluno aluno)
         {
+            var objResult = GetById(aluno.AlunoId);
+            if (true)
+            {
+
+            }
             _context.Update(aluno);
             _context.SaveChanges();
         }

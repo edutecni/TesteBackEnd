@@ -47,7 +47,8 @@ namespace EscolaCleanArch.Infra.Data.Repositories
             if (objResult is not null)
             {
                 _context.Remove(notasAluno);
-            _context.SaveChanges();
+                _context.SaveChanges();
+            }
         }
     }
 }
