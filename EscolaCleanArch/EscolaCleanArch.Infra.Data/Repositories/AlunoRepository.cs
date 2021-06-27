@@ -38,12 +38,18 @@ namespace EscolaCleanArch.Infra.Data.Repositories
         public void Update(Aluno aluno)
         {
             var objResult = GetById(aluno.AlunoId);
-            if (true)
+            if (objResult != null && objResult.Result.AlunoId == aluno.AlunoId)
             {
+                objResult.Result.CursoId = aluno.CursoId;
+                objResult.Result.Foto = aluno.Foto;
+                objResult.Result.Nome = aluno.Nome;
+                objResult.Result.Periodo = aluno.Periodo;
+                objResult.Result.RA = aluno.RA;
 
+                _context.Update(objResult);
+                _context.SaveChanges();
             }
-            _context.Update(aluno);
-            _context.SaveChanges();
+            
         }
 
         public void Remove(Aluno aluno)

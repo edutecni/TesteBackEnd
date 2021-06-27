@@ -11,15 +11,15 @@ namespace EscolaCleanArch.Domain.Entities
     public sealed class Aluno
     {
         [Key]
-        public int AlunoId { get; private set; }
-        public string Nome { get; private set; }
-        public string RA { get; private set; }
-        public string Periodo { get; private set; }
+        public int AlunoId { get; set; }
+        public string Nome { get; set; }
+        public string RA { get; set; }
+        public string Periodo { get; set; }
 
         // Status somente leitura
         public string Status { get; }
-        public int? CursoId { get; private set; }
-        public byte[] Foto { get; private set; }
+        public int? CursoId { get; set; }
+        public byte[] Foto { get; set; }
 
         //public Curso Curso { get; set; }
         //public  IEnumerable<NotasAluno> Notas { get; set; }

@@ -169,9 +169,9 @@ namespace EscolaCleanArch.WebApi.Controllers
                     aluno.AlunoId = id;
                     _alunoService.Update(aluno);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw;
+                    throw ex;
                 }
             }  
         }
