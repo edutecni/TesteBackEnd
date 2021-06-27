@@ -15,6 +15,8 @@ namespace EscolaCleanArch.Infra.Data.EntityConfiguration
         {            
             builder.Property(d => d.Nome).HasMaxLength(50).IsRequired();
 
+            // add-migration Inicial
+            // update-database
             // Caso a Tabela Curso esteja vazia seão adicionados os registros abaixo
             builder.HasData(
                     new Curso { CursoId = 1, Nome = "Ensino Fundamental" },

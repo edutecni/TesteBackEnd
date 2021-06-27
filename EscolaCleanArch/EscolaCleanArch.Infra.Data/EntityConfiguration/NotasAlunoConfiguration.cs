@@ -13,6 +13,8 @@ namespace EscolaCleanArch.Infra.Data.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<NotasAluno> builder)
         {
+            // add-migration Inicial
+            // update-database
             builder.Property(d => d.NotaDiciplina).HasPrecision(10, 2);
 
             builder.HasData(

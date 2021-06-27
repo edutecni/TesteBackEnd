@@ -12,7 +12,9 @@ namespace EscolaCleanArch.Infra.Data.EntityConfiguration
     public class DiciplinaConfiguration : IEntityTypeConfiguration<Diciplina>
     {
         public void Configure(EntityTypeBuilder<Diciplina> builder)
-        {            
+        {
+            // add-migration Inicial
+            // update-database
             builder.Property(d => d.Nome).HasMaxLength(50).IsRequired();
             builder.Property(d => d.NotaMinima).HasPrecision(10, 2).IsRequired();
             //builder.Property(d => d.Nome).IsRequired();

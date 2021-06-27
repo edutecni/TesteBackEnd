@@ -11,6 +11,8 @@ namespace EscolaCleanArch.Infra.Data.Context
 {
     public class ApplicationDbContext : DbContext
     {
+        // add-migration Inicial
+        // update-database
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

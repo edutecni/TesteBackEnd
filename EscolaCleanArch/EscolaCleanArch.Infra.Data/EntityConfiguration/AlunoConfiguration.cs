@@ -11,6 +11,8 @@ namespace EscolaCleanArch.Infra.Data.EntityConfiguration
 {
     public class AlunoConfiguration : IEntityTypeConfiguration<Aluno>
     {
+        // add-migration Inicial
+        // update-database
         public void Configure(EntityTypeBuilder<Aluno> builder)
         {            
             builder.Property(d => d.Nome).HasMaxLength(50).IsRequired();
